@@ -48,7 +48,7 @@ namespace API.Data
                 .HasOne(s => s.TargetUser)
                 .WithMany(l => l.LikedByUsers)
                 .HasForeignKey(s => s.TargetUserId)
-                .OnDelete(DeleteBehavior.Cascade); //SQL Server does not like cascade for both, use noaction instead
+                .OnDelete(DeleteBehavior.NoAction); //SQL Server does not like cascade for both, use noaction instead
 
             builder.Entity<Message>()
                 .HasOne(x => x.Recipient)
